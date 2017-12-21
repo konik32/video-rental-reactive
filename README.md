@@ -28,12 +28,16 @@ Clone the repository and run `mvnw spring-boot:run` Application listens on port 
 ### Rent movies
 `POST` http://localhost:8080/api/customers/John/movies
 ```
-[
+{
+"rentedMovies": [
 	{"title":"Avatar","rentedFrom": "2017-12-19","rentedTo": "2017-12-20"},
 	{"title":"Pulp Fiction","rentedFrom": "2017-12-15","rentedTo": "2017-12-20"},
 	{"title":"Spider Man","rentedFrom": "2017-12-18","rentedTo": "2017-12-20"},
 	{"title":"Star Wars","rentedFrom": "2017-12-13","rentedTo": "2017-12-20"}
-]
+  ]
+
+}
+
 ```
 Response body:
 ```
