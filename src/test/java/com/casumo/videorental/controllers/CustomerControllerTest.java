@@ -2,6 +2,7 @@ package com.casumo.videorental.controllers;
 
 import com.casumo.videorental.dto.Receipt;
 import com.casumo.videorental.dto.Receipt.ReceiptItem;
+import com.casumo.videorental.dto.RentOrder;
 import com.casumo.videorental.model.Customer;
 import com.casumo.videorental.model.Movie;
 import com.casumo.videorental.model.MovieType;
@@ -73,7 +74,7 @@ public class CustomerControllerTest extends VideoRentalITBase {
         //when
         Receipt result = client.post()
                 .uri(CUSTOMER_MOVIES, customerId)
-                .body(Mono.just(prepareRentedMovies()), List.class)
+                .body(Mono.just(new RentOrder(prepareRentedMovies())), RentOrder.class)
                 .exchange()
                 .expectStatus().isOk()
                 .expectBody(Receipt.class)
@@ -95,7 +96,7 @@ public class CustomerControllerTest extends VideoRentalITBase {
         String customerId = postCustomer(JOHN);
         client.post()
                 .uri(CUSTOMER_MOVIES, customerId)
-                .body(Mono.just(prepareRentedMovies()), List.class)
+                .body(Mono.just(new RentOrder(prepareRentedMovies())), RentOrder.class)
                 .exchange()
                 .expectBody(Receipt.class)
                 .returnResult()

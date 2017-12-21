@@ -1,5 +1,6 @@
 package com.casumo.videorental.controllers;
 
+import com.casumo.videorental.dto.RentOrder;
 import com.casumo.videorental.model.Customer;
 import com.casumo.videorental.dto.Receipt;
 import com.casumo.videorental.model.RentedMovie;
@@ -42,8 +43,8 @@ public class CustomerController {
     }
 
     @PostMapping(path = CUSTOMER_MOVIES)
-    public Mono<Receipt> rent(@PathVariable("id") String id, @RequestBody @Valid @NotEmpty Set<RentedMovie> movies) {
-        return rentalService.rent(id, movies);
+    public Mono<Receipt> rent(@PathVariable("id") String id, @RequestBody @Valid RentOrder rentOrder) {
+        return rentalService.rent(id, rentOrder.getRentedMovies());
     }
 
     @PutMapping(path = CUSTOMER_MOVIES_RETURN)

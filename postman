@@ -80,23 +80,22 @@
 			],
 			"url": "http://localhost:8080/api/customers/John/movies",
 			"queryParams": [],
+			"preRequestScript": null,
 			"pathVariables": {},
 			"pathVariableData": [],
-			"preRequestScript": null,
 			"method": "POST",
-			"collectionId": "f46696d0-5980-4bf4-085d-7692dc410464",
 			"data": [],
 			"dataMode": "raw",
-			"name": "Rent movies",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1513869024683,
 			"version": 2,
-			"responses": [],
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"rawModeData": "[\n\t{\"title\":\"Avatar\",\"rentedFrom\": \"2017-12-19\",\"rentedTo\": \"2017-12-20\"},\n\t{\"title\":\"Pulp Fiction\",\"rentedFrom\": \"2017-12-15\",\"rentedTo\": \"2017-12-20\"},\n\t{\"title\":\"Spider Man\",\"rentedFrom\": \"2017-12-18\",\"rentedTo\": \"2017-12-20\"},\n\t{\"title\":\"Star Wars\",\"rentedFrom\": \"2017-12-13\",\"rentedTo\": \"2017-12-20\"}\n]\n"
+			"time": 1513871234481,
+			"name": "Rent movies",
+			"description": "",
+			"collectionId": "f46696d0-5980-4bf4-085d-7692dc410464",
+			"responses": [],
+			"rawModeData": "{\n\t\"rentedMovies\": [\n\t\t{\"title\":\"Avatar\",\"rentedFrom\": \"2017-12-19\",\"rentedTo\": \"2017-12-20\"},\n\t\t{\"title\":\"Pulp Fiction\",\"rentedFrom\": \"2017-12-15\",\"rentedTo\": \"2017-12-20\"},\n\t\t{\"title\":\"Spider Man\",\"rentedFrom\": \"2017-12-18\",\"rentedTo\": \"2017-12-20\"},\n\t\t{\"title\":\"Star Wars\",\"rentedFrom\": \"2017-12-13\",\"rentedTo\": \"2017-12-20\"}\n  ]\n\n}\n"
 		}
 	]
 }
