@@ -33,8 +33,8 @@ public class CustomerControllerTest extends VideoRentalITBase {
 
     @Before
     public void setUp() throws Exception {
-        customerRepository.deleteAll();
-        movieRepository.deleteAll();
+        customerRepository.deleteAll().block();
+        movieRepository.deleteAll().block();
     }
 
     @Test

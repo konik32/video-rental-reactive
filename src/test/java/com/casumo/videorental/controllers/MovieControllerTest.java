@@ -24,7 +24,7 @@ public class MovieControllerTest extends VideoRentalITBase {
 
     @Before
     public void setUp() throws Exception {
-        movieRepository.deleteAll();
+        movieRepository.deleteAll().block();
     }
 
     @Test

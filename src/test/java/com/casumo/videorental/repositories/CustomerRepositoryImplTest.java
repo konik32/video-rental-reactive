@@ -33,7 +33,7 @@ public class CustomerRepositoryImplTest {
 
     @Before
     public void setUp() throws Exception {
-        customerRepository.deleteAll();
+        customerRepository.deleteAll().block();
         Set<RentedMovie> rentedMovies = Stream.of(avatar, pulpFiction, starWars).collect(Collectors.toSet());
         customer.setRentedMovies(rentedMovies);
 
