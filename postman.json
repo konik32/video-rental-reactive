@@ -1,0 +1,279 @@
+{
+	"id": "fcd389b8-b6e2-5bc8-9dd6-5a12f5703f2f",
+	"name": "Video rental",
+	"description": "",
+	"order": [
+		"4bfa95e5-df1a-e6ea-dc06-6bc07965e13f",
+		"9da5c272-d2dc-45c1-a5bf-c6aed26ef4df",
+		"0ba8cc91-a234-10fb-aaae-5a0fdb2cdf34",
+		"d9ece139-4f18-0695-a34f-0a308e1ca7b6",
+		"098a635f-afd4-aa63-b6a6-9ad0aaf5b551",
+		"45741e12-3e00-e8f1-393c-6643df2901a3",
+		"e172e28e-2f6c-8732-2009-4af02371a5d1"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1513862605575,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "098a635f-afd4-aa63-b6a6-9ad0aaf5b551",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/movies",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538640351050,
+			"name": "Create movie with images",
+			"description": "",
+			"collectionId": "fcd389b8-b6e2-5bc8-9dd6-5a12f5703f2f",
+			"responses": [],
+			"rawModeData": "{\"title\":\"Avatar\",\"movieType\": \"NEW\", \"images\":[{\"bucket\": \"video-rental-temp\", \"key\": \"7ea67c04-02f2-4d97-898e-0e15e31d1f47.jpg\"}]}\n\n"
+		},
+		{
+			"id": "0ba8cc91-a234-10fb-aaae-5a0fdb2cdf34",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/customers/John/movies",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538640189393,
+			"name": "Rent movies",
+			"description": "",
+			"collectionId": "fcd389b8-b6e2-5bc8-9dd6-5a12f5703f2f",
+			"responses": [],
+			"rawModeData": "{\n\t\"rentedMovies\": [\n\t\t{\"title\":\"Avatar\",\"rentedFrom\": \"2017-12-19\",\"rentedTo\": \"2017-12-20\"},\n\t\t{\"title\":\"Pulp Fiction\",\"rentedFrom\": \"2017-12-15\",\"rentedTo\": \"2017-12-20\"},\n\t\t{\"title\":\"Spider Man\",\"rentedFrom\": \"2017-12-18\",\"rentedTo\": \"2017-12-20\"},\n\t\t{\"title\":\"Star Wars\",\"rentedFrom\": \"2017-12-13\",\"rentedTo\": \"2017-12-20\"}\n  ]\n\n}\n"
+		},
+		{
+			"id": "45741e12-3e00-e8f1-393c-6643df2901a3",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/files",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538640344250,
+			"name": "Prepare file upload",
+			"description": "",
+			"collectionId": "fcd389b8-b6e2-5bc8-9dd6-5a12f5703f2f",
+			"responses": [],
+			"rawModeData": "{\"name\":\"image.jpg\",\"contentType\": \"image/jpeg\"}\n\n"
+		},
+		{
+			"id": "4bfa95e5-df1a-e6ea-dc06-6bc07965e13f",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/customers/John/movies/return",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538640356202,
+			"name": "Return movies",
+			"description": "",
+			"collectionId": "fcd389b8-b6e2-5bc8-9dd6-5a12f5703f2f",
+			"responses": [],
+			"rawModeData": "[\n\t\"Spider Man\", \"Pulp Fiction\"\n\n]"
+		},
+		{
+			"id": "9da5c272-d2dc-45c1-a5bf-c6aed26ef4df",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8080/api/customers/John",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538640357617,
+			"name": "Check customer",
+			"description": "",
+			"collectionId": "fcd389b8-b6e2-5bc8-9dd6-5a12f5703f2f",
+			"responses": []
+		},
+		{
+			"id": "d9ece139-4f18-0695-a34f-0a308e1ca7b6",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/movies",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538640187626,
+			"name": "Create movie without images",
+			"description": "",
+			"collectionId": "fcd389b8-b6e2-5bc8-9dd6-5a12f5703f2f",
+			"responses": [],
+			"rawModeData": "{\"title\":\"Avatar\",\"movieType\": \"NEW\"}\n\n"
+		},
+		{
+			"id": "e172e28e-2f6c-8732-2009-4af02371a5d1",
+			"headers": "//Content-Type: multipart/form-data\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "multipart/form-data",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "http://video-rental-temp.storage.googleapis.com",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "bucket",
+					"value": "video-rental-temp",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "content-type",
+					"value": "image/jpeg",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "acl",
+					"value": "project-private",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "key",
+					"value": "7ea67c04-02f2-4d97-898e-0e15e31d1f47.jpg",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "GoogleAccessId",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "policy",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "signature",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "file",
+					"value": "Desert (Kopiowanie).jpg",
+					"description": "",
+					"type": "file",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538640359584,
+			"name": "Upload file",
+			"description": "",
+			"collectionId": "fcd389b8-b6e2-5bc8-9dd6-5a12f5703f2f",
+			"responses": []
+		}
+	]
+}

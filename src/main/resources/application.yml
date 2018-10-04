@@ -1,0 +1,7 @@
+application:
+  file-upload:
+    acl: "project-private"
+    temporaryBucket: "video-rental-temp"
+    persistentBucket: "video-rental-persistent"
+    temporaryFileExpirationInSeconds: 3600
+    maxFileSize: 1000000

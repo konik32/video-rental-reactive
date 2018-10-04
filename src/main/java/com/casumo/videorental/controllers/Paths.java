@@ -8,4 +8,5 @@ public interface Paths {
     String CUSTOMER = CUSTOMERS + "/{id}";
     String CUSTOMER_MOVIES = CUSTOMER + "/movies";
     String CUSTOMER_MOVIES_RETURN = CUSTOMER_MOVIES + "/return";
+    String FILES = API + "/files";
 }

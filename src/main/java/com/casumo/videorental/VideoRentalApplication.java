@@ -1,5 +1,6 @@
 package com.casumo.videorental;
 
+import com.casumo.videorental.config.FileUploadProperties;
 import com.casumo.videorental.model.Customer;
 import com.casumo.videorental.model.Movie;
 import com.casumo.videorental.model.MovieType;
@@ -12,13 +13,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRepositories;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
+import javax.annotation.PostConstruct;
 import java.math.BigDecimal;
+import java.util.TimeZone;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -31,6 +35,11 @@ public class VideoRentalApplication implements CommandLineRunner {
 
     public static void main(String[] args) {
         SpringApplication.run(VideoRentalApplication.class, args);
+    }
+
+    @PostConstruct
+    void started() {
+        TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
     }
 
     @Bean

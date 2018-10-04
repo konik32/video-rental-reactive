@@ -3,9 +3,11 @@ package com.casumo.videorental.controllers;
 import com.casumo.videorental.model.Customer;
 import com.casumo.videorental.model.Movie;
 import com.casumo.videorental.model.MovieType;
+import com.google.cloud.storage.Storage;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.reactive.server.WebTestClient;
@@ -34,6 +36,9 @@ public abstract class VideoRentalITBase {
 
     @Autowired
     protected WebTestClient client;
+
+    @MockBean
+    protected Storage storage;
 
 
     protected String postMovie(Movie movie) {
