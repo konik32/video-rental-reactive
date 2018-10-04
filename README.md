@@ -8,7 +8,7 @@ Application now supports file upload to Google Cloud Storage. To reduce the load
 5. Save file information as separate document in mongodb
 6. Attach file reference in movie document (id and serving url)
 
-GCS sdk is synchronous api. To use it in the reactive non-blocking application calls to the Storage were wrapped/isolated with Hystrix thread. Of course calls to Storage block Hystrix threads.
+GCS sdk is synchronous api. To use it in the reactive non-blocking application calls to the Storage were wrapped/isolated with Hystrix thread. Of course, calls to Storage still block Hystrix threads.
 
 To run application without GCP account use dev profile otherwise configure following application properties:
 
